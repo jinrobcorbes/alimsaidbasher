@@ -160,7 +160,10 @@
         <servlet-name>Picture_view</servlet-name>
         <url-pattern>/Picture_view</url-pattern>
     </servlet-mapping>
+<<<<<<< HEAD
 
+=======
+>>>>>>> c126d23ead4bb6a1168d5304fbaa87bde65a0dff
     <servlet-mapping>
         <servlet-name>Data_table_services</servlet-name>
         <url-pattern>/zadmin/Data_table_services</url-pattern>
