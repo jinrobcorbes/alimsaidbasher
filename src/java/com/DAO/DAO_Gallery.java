@@ -30,10 +30,6 @@ public class DAO_Gallery {
     PreparedStatement ps = null;
     ResultSet rs;
 
-    
-    
-
-
     public void deleteGallery_by_id(String update_id) {
 
         ConnectionPool pool = ConnectionPool.getInstance();
@@ -57,7 +53,7 @@ public class DAO_Gallery {
     }
 
     public void add_Gallery(BasherModel bash, Part filePart) {
-        
+
         InputStream inputStream = null;
 
         if (filePart != null) {
@@ -164,7 +160,7 @@ public class DAO_Gallery {
         List<BasherModel> abouts = new ArrayList<>();
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection conn = pool.getConnection();
-        String query = "SELECT `id`, `file_name`, `title`, `desc`, `picture`, `date_modified` FROM `gallery`";
+        String query = "SELECT `id`, `file_name`, `title`, `desc`, `picture`, `date_modified`,  DATE_FORMAT(date_modified, '%m-%Y') as date_only_string FROM `gallery`";
 
         Statement statement = conn.createStatement();
 
@@ -180,7 +176,7 @@ public class DAO_Gallery {
                 about.setArticle(rs.getString("desc"));
                 about.setDate_modified(rs.getTimestamp("date_modified"));
                 about.setFile_name(rs.getString("file_name"));
-
+                about.setDate_only_string(rs.getString("date_only_string"));
                 abouts.add(about);
             }
         } catch (SQLException e) {
@@ -194,5 +190,32 @@ public class DAO_Gallery {
 
     }
 
-    
+    public List<BasherModel> draw_Filter_ForGallery() throws SQLException {
+        List<BasherModel> abouts = new ArrayList<>();
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection conn = pool.getConnection();
+        String query = "SELECT distinct DATE_FORMAT(date_modified, '%m-%Y') as date_only FROM `gallery` order by date_modified asc";
+
+        Statement statement = conn.createStatement();
+
+        try {
+            rs = statement.executeQuery(query);
+
+            while (rs.next()) {
+                BasherModel about = new BasherModel();
+//                about.setDate_only(rs.getDate("date_only"));
+                about.setDate_only_string(rs.getString("date_only"));
+                abouts.add(about);
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            DBUtil.closeResultSet(rs);
+            DBUtil.closePreparedStatement(ps);
+            pool.freeConnection(conn);
+        }
+        return abouts;
+
+    }
+
 }

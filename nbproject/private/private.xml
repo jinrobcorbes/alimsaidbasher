@@ -3,12 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
+            <file>file:/C:/Users/User/Desktop/abdul_projecta/alimsaidbasher/src/java/com/DAO/DAO_Gallery.java</file>
+            <file>file:/C:/Users/User/Desktop/abdul_projecta/alimsaidbasher/src/java/com/basher/utility/gallery/Draw_filter_by_gallery.java</file>
+            <file>file:/C:/Users/User/Desktop/abdul_projecta/alimsaidbasher/web/index.jsp</file>
+=======
             <file>file:/C:/Users/user/Desktop/abdul_projecta/alimsaidbasher/web/index.jsp</file>
             <file>file:/C:/Users/user/Desktop/abdul_projecta/alimsaidbasher/src/java/com/basher/model/BasherModel.java</file>
             <file>file:/C:/Users/user/Desktop/abdul_projecta/alimsaidbasher/src/java/com/DAO/DAO_Blog.java</file>
             <file>file:/C:/Users/user/Desktop/abdul_projecta/alimsaidbasher/src/java/com/basher/utility/BlogViewSingleData.java</file>
             <file>file:/C:/Users/user/Desktop/abdul_projecta/alimsaidbasher/src/java/com/basher/utility/Data_table_Blog.java</file>
             <file>file:/C:/Users/user/Desktop/abdul_projecta/alimsaidbasher/web/WEB-INF/web.xml</file>
+>>>>>>> 990ff75eb9dc5841d54709c75c4a261137efb230
         </group>
     </open-files>
 </project-private>
