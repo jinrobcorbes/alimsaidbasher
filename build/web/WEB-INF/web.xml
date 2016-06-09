@@ -152,6 +152,10 @@
         <servlet-name>Data_table_gallery</servlet-name>
         <url-pattern>/zadmin/Data_table_gallery</url-pattern>
     </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>Data_table_gallery</servlet-name>
+        <url-pattern>/Data_table_gallery</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Picture_view</servlet-name>
         <url-pattern>/zadmin/Picture_view</url-pattern>

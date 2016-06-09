@@ -7,6 +7,7 @@ package com.basher.model;
 
 import java.sql.Blob;
 import java.sql.Timestamp;
+import java.util.Date;
 
 /**
  *
@@ -29,17 +30,15 @@ public class BasherModel {
     private String file_name;
     private Blob picture;
 
-
     private String username;
     private String password;
     private String fname;
     private String lname;
     private String gender;
 
-    
     private long file_size;
-
-
+    private Date date_only;
+    private String date_only_string;
 
     /**
      * @return the id
@@ -198,7 +197,6 @@ public class BasherModel {
 
     }
 
-
     public String getFile_name() {
         return file_name;
     }
@@ -307,6 +305,34 @@ public class BasherModel {
      */
     public void setFile_size(long file_size) {
         this.file_size = file_size;
+    }
+
+    /**
+     * @return the date_only
+     */
+    public Date getDate_only() {
+        return date_only;
+    }
+
+    /**
+     * @param date_only the date_only to set
+     */
+    public void setDate_only(Date date_only) {
+        this.date_only = date_only;
+    }
+
+    /**
+     * @return the date_only_string
+     */
+    public String getDate_only_string() {
+        return date_only_string;
+    }
+
+    /**
+     * @param date_only_string the date_only_string to set
+     */
+    public void setDate_only_string(String date_only_string) {
+        this.date_only_string = date_only_string;
     }
 
 }

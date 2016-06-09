@@ -3,16 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/user/Desktop/abdul_projecta/alimsaidbasher/web/index.jsp</file>
-            <file>file:/C:/Users/user/Desktop/abdul_projecta/alimsaidbasher/web/body/_program.jsp</file>
-            <file>file:/C:/Users/user/Desktop/abdul_projecta/alimsaidbasher/web/zadmin/adm_program.jsp</file>
-            <file>file:/C:/Users/user/Desktop/abdul_projecta/alimsaidbasher/src/java/com/basher/utility/Data_table_Program.java</file>
-            <file>file:/C:/Users/user/Desktop/abdul_projecta/alimsaidbasher/web/WEB-INF/web.xml</file>
-=======
-            <file>file:/C:/Users/User/Desktop/abdul_projecta/alimsaidbasher/web/bash/css/style.css</file>
+            <file>file:/C:/Users/User/Desktop/abdul_projecta/alimsaidbasher/src/java/com/DAO/DAO_Gallery.java</file>
+            <file>file:/C:/Users/User/Desktop/abdul_projecta/alimsaidbasher/src/java/com/basher/utility/gallery/Draw_filter_by_gallery.java</file>
             <file>file:/C:/Users/User/Desktop/abdul_projecta/alimsaidbasher/web/index.jsp</file>
->>>>>>> 7f6261c0c7812b4cec644b9d338d49f44652ddb4
         </group>
     </open-files>
 </project-private>

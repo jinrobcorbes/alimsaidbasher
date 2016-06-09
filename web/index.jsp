@@ -31,7 +31,7 @@
         <!-- Stylesheet
         ================================================== -->
         <link rel="stylesheet" type="text/css"  href="bash/css/style.css">
-        <link rel="stylesheet" type="text/css"  href="bash/css/style_1.css">
+        <!--<link rel="stylesheet" type="text/css"  href="bash/css/style_1.css">-->
         <link rel="stylesheet" type="text/css" href="bash/css/responsive.css">
 
         <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
@@ -50,6 +50,18 @@
         
          
         <![endif]-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script type="text/javascript" src="bash/js/bootstrap.js"></script>
+        <script type="text/javascript" src="bash/js/SmoothScroll.js"></script>
+        <script type="text/javascript" src="bash/js/jquery.isotope.js"></script>
+
+        <script src="bash/js/owl.carousel.js"></script>
+
+        <!-- Javascripts
+        ================================================== -->
+        <script type="text/javascript" src="bash/js/main.js"></script>
 
 
     </head>
@@ -151,6 +163,8 @@
                 //append_about_here
 
                 load_data();
+                load_data_gallery();
+                load_filter_gallery();
             });</script>
 
 
@@ -376,128 +390,128 @@
                     <!--<small><em>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</em></small>-->
 
 
-                    <div class="categories">
+                    <div id="draw_filter" class="categories">
 
-                        <ul class="cat">
-                            <li class="pull-left"><h4>Filter by Type:</h4></li>
-                            <li class="pull-right">
-                                <ol class="type">
-                                    <li><a href="#" data-filter="*" class="active">All</a></li>
-                                    <li><a href="#" data-filter=".web">Web Design</a></li>
-                                    <li><a href="#" data-filter=".photography">Photography</a></li>
-                                    <li><a href="#" data-filter=".app" >Mobile App</a></li>
-                                    <li><a href="#" data-filter=".branding" >Branding</a></li>
-                                </ol>
-                            </li>
-                        </ul>
-                        <div class="clearfix"></div>
+                        <!--                        <ul class="cat">
+                                                    <li class="pull-left"><h4>Filter by Type:</h4></li>
+                                                    <li class="pull-right">
+                                                        <ol class="type">
+                                                            <li><a href="#" data-filter="*" class="active">All</a></li>
+                                                            <li><a href="#" data-filter=".May242016">Web Design</a></li>
+                                                            <li><a href="#" data-filter=".photography">Photography</a></li>
+                                                            <li><a href="#" data-filter=".app" >Mobile App</a></li>
+                                                            <li><a href="#" data-filter=".branding" >Branding</a></li>
+                                                        </ol>
+                                                    </li>
+                                                </ul>
+                                                <div class="clearfix"></div>-->
                     </div>
                 </div>
                 <div id="lightbox" class="row ">
-
-                    <div class="col-sm-6 col-md-3 col-lg-3 branding">
-                        <div class="portfolio-item">
-                            <div class="hover-bg">
-                                <a href="#">
-                                    <div class="hover-text">
-                                        <h4>Logo Design</h4>
-                                    </div>
-                                    <img src="Picture_view?id=11&set_table=gallery" class="img-responsive" alt="...">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-3 col-lg-3 photography app">
-                        <div class="portfolio-item">
-                            <div class="hover-bg">
-                                <a href="#">
-                                    <div class="hover-text">
-                                        <h4>Logo Design</h4>
-                                    </div>
-                                    <img src="bash/img/portfolio/02.jpg" class="img-responsive" alt="...">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-3 col-lg-3 branding">
-                        <div class="portfolio-item">
-                            <div class="hover-bg">
-                                <a href="#">
-                                    <div class="hover-text">
-                                        <h4>Logo Design</h4>
-                                    </div>
-                                    <img src="bash/img/portfolio/03.jpg" class="img-responsive" alt="...">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-3 col-lg-3 branding">
-                        <div class="portfolio-item">
-                            <div class="hover-bg">
-                                <a href="#">
-                                    <div class="hover-text">
-                                        <h4>Logo Design</h4>
-                                    </div>
-                                    <img src="bash/img/portfolio/04.jpg" class="img-responsive" alt="...">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-3 col-lg-3 web">
-                        <div class="portfolio-item">
-                            <div class="hover-bg">
-                                <a href="#">
-                                    <div class="hover-text">
-                                        <h4>Logo Design</h4>
-                                    </div>
-                                    <img src="bash/img/portfolio/05.jpg" class="img-responsive" alt="...">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-3 col-lg-3 app">
-                        <div class="portfolio-item">
-                            <div class="hover-bg">
-                                <a href="#">
-                                    <div class="hover-text">
-                                        <h4>Logo Design</h4>
-                                    </div>
-                                    <img src="bash/img/portfolio/06.jpg" class="img-responsive" alt="...">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-3 col-lg-3 photography web">
-                        <div class="portfolio-item">
-                            <div class="hover-bg">
-                                <a href="#">
-                                    <div class="hover-text">
-                                        <h4>Logo Design</h4>
-                                    </div>
-                                    <img src="bash/img/portfolio/07.jpg" class="img-responsive" alt="...">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-3 col-lg-3 web">
-                        <div class="portfolio-item">
-                            <div class="hover-bg">
-                                <a href="#">
-                                    <div class="hover-text">
-                                        <h4>Logo Design</h4>
-                                    </div>
-                                    <img src="bash/img/portfolio/08.jpg" class="img-responsive" alt="...">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    <!--<div id="lightbox"></div>-->
+                    <!--                                        <div class="col-sm-6 col-md-3 col-lg-3 web">
+                                                                <div class="portfolio-item">
+                                                                    <div class="hover-bg">
+                                                                        <a href="#">
+                                                                            <div class="hover-text">
+                                                                                <h4>Logo Design</h4>
+                                                                            </div>
+                                                                            <img src="Picture_view?id=2&set_table=gallery" class="img-responsive" alt="...">
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                        
+                                                            <div class="col-sm-6 col-md-3 col-lg-3 photography app">
+                                                                <div class="portfolio-item">
+                                                                    <div class="hover-bg">
+                                                                        <a href="#">
+                                                                            <div class="hover-text">
+                                                                                <h4>Logo Design</h4>
+                                                                            </div>
+                                                                            <img src="bash/img/portfolio/02.jpg" class="img-responsive" alt="...">
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                        
+                                                            <div class="col-sm-6 col-md-3 col-lg-3 branding">
+                                                                <div class="portfolio-item">
+                                                                    <div class="hover-bg">
+                                                                        <a href="#">
+                                                                            <div class="hover-text">
+                                                                                <h4>Logo Design</h4>
+                                                                            </div>
+                                                                            <img src="bash/img/portfolio/03.jpg" class="img-responsive" alt="...">
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                        
+                                                            <div class="col-sm-6 col-md-3 col-lg-3 branding">
+                                                                <div class="portfolio-item">
+                                                                    <div class="hover-bg">
+                                                                        <a href="#">
+                                                                            <div class="hover-text">
+                                                                                <h4>Logo Design</h4>
+                                                                            </div>
+                                                                            <img src="bash/img/portfolio/04.jpg" class="img-responsive" alt="...">
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                        
+                                                            <div class="col-sm-6 col-md-3 col-lg-3 web">
+                                                                <div class="portfolio-item">
+                                                                    <div class="hover-bg">
+                                                                        <a href="#">
+                                                                            <div class="hover-text">
+                                                                                <h4>Logo Design</h4>
+                                                                            </div>
+                                                                            <img src="bash/img/portfolio/05.jpg" class="img-responsive" alt="...">
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                        
+                                                            <div class="col-sm-6 col-md-3 col-lg-3 app">
+                                                                <div class="portfolio-item">
+                                                                    <div class="hover-bg">
+                                                                        <a href="#">
+                                                                            <div class="hover-text">
+                                                                                <h4>Logo Design</h4>
+                                                                            </div>
+                                                                            <img src="bash/img/portfolio/06.jpg" class="img-responsive" alt="...">
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                        
+                                                            <div class="col-sm-6 col-md-3 col-lg-3 photography web">
+                                                                <div class="portfolio-item">
+                                                                    <div class="hover-bg">
+                                                                        <a href="#">
+                                                                            <div class="hover-text">
+                                                                                <h4>Logo Design</h4>
+                                                                            </div>
+                                                                            <img src="bash/img/portfolio/07.jpg" class="img-responsive" alt="...">
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                        
+                                                            <div class="col-sm-6 col-md-3 col-lg-3 web">
+                                                                <div class="portfolio-item">
+                                                                    <div class="hover-bg">
+                                                                        <a href="#">
+                                                                            <div class="hover-text">
+                                                                                <h4>Logo Design</h4>
+                                                                            </div>
+                                                                            <img src="bash/img/portfolio/08.jpg" class="img-responsive" alt="...">
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>-->
 
                 </div>
             </div>
@@ -632,7 +646,7 @@
 
         <script>
             function load_data_Program() {
-                
+
                 $.ajax({
                     type: "get", // GET or POST
                     url: 'Data_table_Program', // Path to file
@@ -644,8 +658,8 @@
                     success: function (response) {
 
                         $.each(response, function (index, value) {
-                            
-                            
+
+
 
                             console.log(value.id + "Thrones of inaarw araw " + value.title + " " + value.article + " " + value.date_modified);
 
@@ -682,10 +696,10 @@
                     </div>
                     <div class="row">
                         <ul class="about-list" style="column-count: 3;" id="basher_program">
-<!--                            <li>
-                                <span class="fa fa-star-o"></span>
-                                <strong>PERSONAL LIFE AND EDUCATION</strong>  
-                            </li>-->
+                            <!--                            <li>
+                                                            <span class="fa fa-star-o"></span>
+                                                            <strong>PERSONAL LIFE AND EDUCATION</strong>  
+                                                        </li>-->
                             <!-- 
                             <li>
                                 <span class="fa fa-star-o"></span>
@@ -914,6 +928,7 @@
             $(document).ready(function () {
 
                 load_data_acknowledgement();
+
             });</script>
 
 
@@ -968,18 +983,6 @@
 
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script type="text/javascript" src="bash/js/bootstrap.js"></script>
-        <script type="text/javascript" src="bash/js/SmoothScroll.js"></script>
-        <script type="text/javascript" src="bash/js/jquery.isotope.js"></script>
-
-        <script src="bash/js/owl.carousel.js"></script>
-
-        <!-- Javascripts
-        ================================================== -->
-        <script type="text/javascript" src="bash/js/main.js"></script>
 
 
 
@@ -988,30 +991,147 @@
 
 <script>
 
-                            $(document).ready(function () {
+    $(document).ready(function () {
+//        load_data_gallery();
+//        load_filter_gallery();
+
+    });
+
+    function click_me() {
+        console.log("detect");
+        var imageUrl = "/img/01.jpg";
+        $('#tf-home').css("background-image", "url(bash/img/01.jpg)");
+
+    }
 
 
-//        var imageUrl = "../img/01.jpg";
-//        $('tf-home').css('background-image', 'url("' + imageUrl + '")');
-//        $('tf-home').css('background-image', 'url(' + encodeURIComponent(imageUrl) + ')');
+    function load_data_gallery() {
 
-                            });
+        var counting = 0;
+        console.log("success load load_data gallery");
+        $.ajax({
+            type: "get", // GET or POST
+            url: 'Data_table_gallery', // Path to file
+            cache: false,
+            data: {
+//                empno:${emp.empNo}
+            },
+            beforeSend: function () {                                // Before Ajax 
 
-                            function click_me() {
-//                                $('#myDiv').css('background', 'path/to/image.jpg');
+            },
+            complete: function () {
 
-                                console.log("detect");
-                                var imageUrl = "/img/01.jpg";
-//                                $('#tf-home').css('background', 'url("imageUrl' + imageUrl + '")');
-//                                $('#tf-home').css('background-image', 'url(' + encodeURIComponent(imageUrl) + ')');
-//                                $('#tf-home').css('background-image', 'url("../img/01.jpg")');
-//                                 $('#tf-home').parent().css("background", "url('bash/img/01.jpg') no-repeat");
-//                                  $(this).parent().css("backgroundImage", "url('../images/r-srchbg_white.png') no-repeat");
-                                $('#tf-home').css("background-image", "url(bash/img/01.jpg)");
-//                                $('selector').css('backgroundImage', 'url(images/example.jpg)');
-//                                $('selector').css({'background-image': 'url(..img/01.jpg)'});
-//                                document.getElementById("tf-home").style.backgroundImage = "url('../img/01.jpg')";
-//                                document.getElementById("tf-home").style.backgroundImage = imageUrl;
-                            }
+                //$success.show();
+            },
+            success: function (response) {
+// Show content
+//                alert(response.toString());
+
+//                $('#example1').DataTable().clear().draw();
+
+                var text = "";
+                var monthNames = ["January", "February", "March", "April", "May", "June",
+                    "July", "August", "September", "October", "November", "December"
+                ];
+                $.each(response, function (index, value) {
+
+                    var str = value.date_only_string;
+                    var split = str.split("-");
+                    var set_month_name = parseFloat(split[0]) - parseFloat("1");
+                    var get_month_name = monthNames[set_month_name] + "-" + split[1];
+                    var get_id = "";
+                    console.log("HERE " + value.id + " " + value.title);
+                    console.log("date_only_string " + value.date_only_string);
+                    get_id = value.id;
+                    counting++;
+                    text = text + '<div class="col-sm-6 col-md-3 col-lg-3 ' + get_month_name + '">';
+                    text = text + '<div class="portfolio-item">';
+
+                    text = text + '<div class="hover-bg">';
+//                    text = text + '<a href="#">';
+                    text = text + '<div class="hover-text">';
+                    text = text + '<h4>' + value.title + '</h4>';
+                    text = text + '<h6>' + value.article + '</h6>';
+                    text = text + ' </div>';
+                    text = text + '<img src="Picture_view?id=' + get_id + '&set_table=gallery" class="img-responsive" alt="...">';
+//                    text = text + '</a>';
+                    text = text + ' </div>';
+                    text = text + ' </div>';
+                    text = text + ' </div>';
+
+                });
+                document.getElementById("lightbox").innerHTML = text;
+            },
+            error: function (xhr) {
+                console.log("error " + xhr.toString());
+            }
+        });
+    }
+
+
+    function load_filter_gallery() {
+
+        var counting = 0;
+        console.log("success load load_filter_gallery");
+        $.ajax({
+            type: "get", // GET or POST
+            url: 'Draw_filter_by_gallery', // Path to file
+            cache: false,
+            data: {
+//                empno:${emp.empNo}
+            },
+            beforeSend: function () {                                // Before Ajax 
+
+            },
+            complete: function () {
+
+                //$success.show();
+            },
+            success: function (response) {
+// Show content
+//                alert(response.toString());
+
+//                $('#example1').DataTable().clear().draw();
+                var monthNames = ["January", "February", "March", "April", "May", "June",
+                    "July", "August", "September", "October", "November", "December"
+                ];
+
+                var text = "";
+                text = text + '<ul class="cat">';
+                text = text + '<li class="pull-left"><h4>Filter by Type:</h4></li>';
+                text = text + '<li class="pull-right">';
+                text = text + '<ol class="type">';
+                text = text + '<li><a href="#" data-filter="*" class="active">All</a></li>';
+                $.each(response, function (index, value) {
+                    var str = value.date_only_string;
+                    var split = str.split("-");
+                    var set_month_name = parseFloat(split[0]) - parseFloat("1");
+                    var get_month_name = monthNames[set_month_name] + "-" + split[1];
+                    counting++;
+
+
+
+//                    text = text + '<a href="#">';
+
+                    text = text + '<li><a href="#" data-filter=".' + get_month_name + '" class="active">' + get_month_name + '</a></li>';
+
+
+
+
+
+
+                });
+                text = text + '</ol>';
+                text = text + '</li>';
+                text = text + ' </ul>';
+                text = text + ' <div class="clearfix"></div>';
+                text = text + ' </div>';
+                document.getElementById("draw_filter").innerHTML = text;
+            },
+            error: function (xhr) {
+                console.log("error " + xhr.toString());
+            }
+        });
+    }
 
 </script>
