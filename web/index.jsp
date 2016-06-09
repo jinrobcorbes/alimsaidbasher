@@ -95,7 +95,7 @@
                         <li><a href="#tf-programs" class="page-scroll">Program</a></li>
                         <li><a href="#tf-blog" class="page-scroll">Blog</a></li>
                         <li><a href="#tf-files" class="page-scroll">File</a></li>
-                        <li><a href="#tf-lastAcknowledge" class="page-scroll">Acknowledge</a></li>
+                        <li><a href="#tf-lastAcknowledge" class="page-scroll">Acknowledgement</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
@@ -282,9 +282,7 @@
                             setTimeout(function () {
 
                                 $("#team").append(about_list_team);
-
                             }, 200);
-
                         });
                     },
                     error: function (xhr) {
@@ -297,7 +295,7 @@
                 //append_about_here
 
 
-                var sample_data = '<div class="item" id="team1">'
+                var sample_data = '<div class="item" id="team1" style="display:none">'
                         + ' <div class="thumbnail">'
                         + '  <img src="bash/img/team/01.jpg" alt="..." class="img-circle team-img">'
                         + ' <div class="caption">'
@@ -308,22 +306,14 @@
                         + '  </div>'
                         + ' </div>';
                 $("#team").append(sample_data);
-
-
                 setTimeout(function () {
 
                     load_team();
-
-                    $("#team1").remove();
+                    // $("#team1").hide();
 
 
                 }, 200);
-
-
-            });
-
-
-        </script>
+            });</script>
 
 
 
@@ -658,17 +648,20 @@
                     success: function (response) {
 
                         $.each(response, function (index, value) {
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 990ff75eb9dc5841d54709c75c4a261137efb230
 
 
 
                             console.log(value.id + "Thrones of inaarw araw " + value.title + " " + value.article + " " + value.date_modified);
-
                             var program_list = ' <li>'
                                     + '    <span class="fa fa-star-o"></span>'
                                     + '  <strong>' + value.title + '</strong>  '
                                     + '<p>' + value.article + ' </p>'
                                     + '</li>';
-
                             $("#basher_program").append(program_list);
                         });
                     },
@@ -678,9 +671,7 @@
             }
             $(document).ready(function () {
                 load_data_Program();
-            });
-
-        </script>
+            });</script>
 
 
         <div id="tf-programs" class="text-center">
@@ -740,6 +731,134 @@
         </div>
 
         <!-- Blog Section ==========================================-->
+
+
+
+        <script>
+
+
+            function clcik_me(elem) {
+
+                var id = $(elem).attr("id");
+
+                var the_id = $('#' + id + '').text();
+                var title = $('#' + id + '').text();
+
+
+//                alert(id);
+                //  alert(title);
+
+                console.log("title :" + the_id);
+                $.ajax({
+                    type: "get", // GET or POST
+                    url: 'BlogViewSingleData', // Path to file
+                    data: {title: title},
+                    beforeSend: function () {                                // Before Ajax 
+                        $("#basher_blog_content").remove();
+                    },
+                    complete: function () {
+                    },
+                    success: function (response) {
+
+                        var the_ul = '  <ul class="about-list" id="basher_blog_content">'
+                                + '<ul>';
+                        $("#ul_content_data").append(the_ul);
+                        $.each(response, function (index, value) {
+
+
+                            var blog_content = ' <li>  '
+                                    + '<h4><strong>' + value.title + '</strong></h4>'
+                                    + ' <iframe width="620px" height="600"'
+                                    + ' src="' + value.video_link + '">'
+                                    + '</iframe>'
+                                    + ' <p class="text-justify">' + value.article + '</p>'
+                                    + '</li>';
+                            $("#basher_blog_content").append(blog_content);
+                        });
+                    },
+                    error: function (xhr) {
+
+                    }
+                });
+            }
+            function load_data_Blog_title() {
+
+
+                var counting = 0;
+                $.ajax({
+                    type: "get", // GET or POST
+                    url: 'Data_table_Blog', // Path to file
+                    beforeSend: function () {                                // Before Ajax 
+
+                    },
+                    complete: function () {
+                    },
+                    success: function (response) {
+
+                        $.each(response, function (index, value) {
+
+
+
+                            counting++;
+                            var blog_title = '<li>'
+                                    + ' <span  class="fa fa-angle-double-right" ></span>'
+                                    + '  <span  id="list' + counting + '"   onclick="clcik_me(this)">  <a href="#tf-blog">' + value.title + '</a></span>'
+                                    + '</li>';
+                            $("#blog_title").append(blog_title);
+                        });
+                    },
+                    error: function (xhr) {
+                    }
+                });
+            }
+
+
+
+            function load_data_Blog_title_first_data() {
+                var counting = 0;
+                $.ajax({
+                    type: "get", // GET or POST
+                    url: 'BlogFirstView', // Path to file
+                    beforeSend: function () {                                // Before Ajax 
+
+                    },
+                    complete: function () {
+                    },
+                    success: function (response) {
+                        var the_ul = '  <ul class="about-list" id="basher_blog_content">'
+                                + '<ul>';
+                        $("#ul_content_data").append(the_ul);
+                        $.each(response, function (index, value) {
+
+
+                            var blog_content = ' <li>  '
+                                    + '<h4><strong>' + value.title + '</strong></h4>'
+                                    + ' <iframe width="620px" height="600"'
+                                    + ' src="' + value.video_link + '">'
+                                    + '</iframe>'
+                                    + ' <p class="text-justify">' + value.article + '</p>'
+                                    + '</li>';
+                            $("#basher_blog_content").append(blog_content);
+                        });
+
+
+                    },
+                    error: function (xhr) {
+                    }
+                });
+            }
+
+
+
+            $(document).ready(function () {
+
+                load_data_Blog_title();
+                load_data_Blog_title_first_data();
+            });
+
+        </script>
+
+
         <div id="tf-blog">
             <div class="container"> <!-- Container -->
                 <div class="section-title text-center center">
@@ -754,46 +873,96 @@
                     <div class="col-md-4 pull-right">
                         <div class="categories">
                             <h3><strong>Categories</strong></h3>
-                            <ul class="about-list" style="column-count: 1;">
-                                <li>
-                                    <a href="#">
-                                        <span class="fa fa-angle-double-right"></span>
-                                        <strong>Duis autem vel eum iriure dolor</strong>  
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="fa fa-angle-double-right"></span>
-                                        <strong>Hendrerit in vulputate velit esse molestie</strong>  
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="fa fa-angle-double-right"></span>
-                                        <strong>Praesent luptatum zzril delenit augue</strong>  
-                                    </a>
-                                </li>
+                            <ul class="about-list" style="column-count: 1;" id="blog_title">
+                                <!--                                <li>
+                                                                    <a href="#">
+                                                                        <span class="fa fa-angle-double-right"></span>
+                                                                        <strong>Duis autem vel eum iriure dolor</strong>  
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#">
+                                                                        <span class="fa fa-angle-double-right"></span>
+                                                                        <strong>Hendrerit in vulputate velit esse molestie</strong>  
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#">
+                                                                        <span class="fa fa-angle-double-right"></span>
+                                                                        <strong>Praesent luptatum zzril delenit augue</strong>  
+                                                                    </a>
+                                                                </li>
+                                
+                                                                <li>
+                                                                    <a href="#">
+                                                                        <span class="fa fa-angle-double-right"></span>
+                                                                        <strong>Praesent luptatum zzril delenit augue</strong>  
+                                                                    </a>
+                                                                </li>-->
+
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-8">
-                        <ul class="about-list">
-                            <li>  
-                                <h4><strong>Duis autem vel eum iriure dolor</strong></h4>
-                                <img src="bash/img/portfolio/03.jpg" class="img-responsive" alt="...">                   
-                                <p class="text-justify">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum delenit augue duis dolore te feugait nulla facilisi.</p>
+                    <div class="col-md-8" id="ul_content_data">
 
-                            </li>  
 
-                            <li>  
-                                <h4><strong>Hendrerit in vulputate velit esse molestie</strong></h4>    
-                                <div class="clear"></div>            
-                                <img src="bash/img/portfolio/08.jpg" class="img-responsive" alt="...">                             
-                                <p class="text-justify">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum delenit augue duis dolore te feugait nulla facilisi.</p>
 
-                            </li> 
+                        <!--                        <ul class="about-list" id="basher_blog_content">
+                        
+                        
+                                                </ul>-->
+                        <!--                        <ul class="about-list" id="basher_blog_content">-->
+                        <!--                            <li>  
+                                                        <h4><strong>Duis autem vel eum iriure dolor</strong></h4>
+                                                                                        <img src="bash/img/portfolio/03.jpg" class="img-responsive" alt="...">                   
+                                                        <iframe width="620px" height="600"
+                                                                src="http://www.youtube.com/embed/dJzWCo-21UY">
+                                                        </iframe>
+                        
+                                                        <p class="text-justify">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum delenit augue duis dolore te feugait nulla facilisi.</p>
+                        
+                                                    </li>  -->
 
-                        </ul>
+                        <!--                            <li>  
+                                                        <h4><strong>Hendrerit in vulputate velit esse molestie</strong></h4>    
+                                                        <div class="clear"></div>            
+                                                                                        <img src="bash/img/portfolio/08.jpg" class="img-responsive" alt="...">                             
+                                                        <iframe width="620px" height="600"
+                                                                src="https://www.youtube.com/embed/Zws0w7aUpW0">
+                                                        </iframe>
+                        
+                                                        <p class="text-justify">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum delenit augue duis dolore te feugait nulla facilisi.</p>
+                        
+                                                    </li> -->
+
+                        <!--
+                                                    <li>  
+                                                        <h4><strong>Hendrerit in vulputate velit esse molestie</strong></h4>    
+                                                        <div class="clear"></div>            
+                                                           0WVRXklAMFo                             <img src="bash/img/portfolio/08.jpg" class="img-responsive" alt="...">                             
+                                                        <iframe width="620px" height="600"
+                                                                src="https://www.youtube.com/embed/RqbYLAdIBkg">
+                                                        </iframe>
+                        
+                                                        <p class="text-justify">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum delenit augue duis dolore te feugait nulla facilisi.</p>
+                        
+                                                    </li> -->
+
+                        <!--
+                        
+                                                    <li>  
+                                                        <h4><strong>Hendrerit in vulputate velit esse molestie</strong></h4>    
+                                                        <div class="clear"></div>            
+                                                                                        <img src="bash/img/portfolio/08.jpg" class="img-responsive" alt="...">                             
+                                                        <iframe width="620px" height="600"
+                                                                src="https://www.youtube.com/embed/0WVRXklAMFo">
+                                                        </iframe>
+                        
+                                                        <p class="text-justify">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum delenit augue duis dolore te feugait nulla facilisi.</p>
+                        
+                                                    </li> -->
+
+                        <!--                        </ul>-->
                     </div>
                     <div class="space"></div>
                 </div>
@@ -991,11 +1160,15 @@
 
 <script>
 
+<<<<<<< HEAD
     $(document).ready(function () {
 //        load_data_gallery();
 //        load_filter_gallery();
 
     });
+=======
+            $(document).ready(function () {
+>>>>>>> 990ff75eb9dc5841d54709c75c4a261137efb230
 
     function click_me() {
         console.log("detect");
@@ -1004,6 +1177,7 @@
 
     }
 
+<<<<<<< HEAD
 
     function load_data_gallery() {
 
@@ -1133,5 +1307,24 @@
             }
         });
     }
+=======
+            });
+            function click_me() {
+//                                $('#myDiv').css('background', 'path/to/image.jpg');
+
+                console.log("detect");
+                var imageUrl = "/img/01.jpg";
+//                                $('#tf-home').css('background', 'url("imageUrl' + imageUrl + '")');
+//                                $('#tf-home').css('background-image', 'url(' + encodeURIComponent(imageUrl) + ')');
+//                                $('#tf-home').css('background-image', 'url("../img/01.jpg")');
+//                                 $('#tf-home').parent().css("background", "url('bash/img/01.jpg') no-repeat");
+//                                  $(this).parent().css("backgroundImage", "url('../images/r-srchbg_white.png') no-repeat");
+                $('#tf-home').css("background-image", "url(bash/img/01.jpg)");
+//                                $('selector').css('backgroundImage', 'url(images/example.jpg)');
+//                                $('selector').css({'background-image': 'url(..img/01.jpg)'});
+//                                document.getElementById("tf-home").style.backgroundImage = "url('../img/01.jpg')";
+//                                document.getElementById("tf-home").style.backgroundImage = imageUrl;
+            }
+>>>>>>> 990ff75eb9dc5841d54709c75c4a261137efb230
 
 </script>
