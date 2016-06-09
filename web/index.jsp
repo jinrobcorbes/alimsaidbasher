@@ -573,6 +573,41 @@
         </div>
         <!-- Contact Section
         ==========================================-->
+        <script>
+            function load_data_contact_us() {
+
+                $.ajax({
+                    type: "get", // GET or POST
+                    url: 'Data_table_Contact', // Path to file
+                    beforeSend: function () {                                // Before Ajax 
+
+                    },
+                    complete: function () {
+                    },
+                    success: function (response) {
+
+                        $.each(response, function (index, value) {
+
+                            var about_list_contact = '<li>'
+                                    + '<span class="fa fa-phone"> </span>'
+                                    + '<strong>' + value.title + '</strong>'
+                                    + '<p>' + value.contact_info + '</p>'
+                                    + '</li>';
+
+                            $("#basher_contact_in_here").append(about_list_contact);
+                        });
+                    },
+                    error: function (xhr) {
+                    }
+                });
+            }
+            $(document).ready(function () {
+                load_data_contact_us();
+            });</script>
+
+
+
+
         <div id="tf-contact" class="text-center">
             <div class="container">
 
@@ -585,21 +620,54 @@
                                 <hr>
                             </div>
                             <div class="clearfix"></div>
-                            <small><em>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</em></small>            
+                            <!--                            <small><em>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</em></small>            -->
+
+                            <ul class="about-list"  id="basher_contact_in_here" style="column-count: 3;">
+                                <!--                                <li>
+                                                                    <span class="fa fa-phone"></span>
+                                                                    <strong>PERSONAL LIFE AND EDUCATION</strong>  
+                                                                </li>-->
+                                <!--                                <li>
+                                                                      <span class="fa fa-phone"></span>
+                                                                    <strong>PERSONAL LIFE AND EDUCATION</strong>  
+                                                                </li>
+                                                                <li>
+                                                                     <span class="fa fa-phone"></span>
+                                                                    <strong>PERSONAL LIFE AND EDUCATION</strong>  
+                                                                </li>
+                                                                
+                                                                 <li>
+                                                                     <span class="fa fa-phone"></span>
+                                                                    <strong>PERSONAL LIFE AND EDUCATION</strong>  
+                                                                </li>
+                                                                <li>
+                                                                    <span class="fa fa-phone"></span>
+                                                                    <strong>PERSONAL LIFE AND EDUCATION</strong>  
+                                                                </li>
+                                -->
+
+
+                            </ul>
+
+
                         </div>
+                        <div class="clearfix"></div>
+                        <small><em>You can also reach us through email by filling up  and submitting the form below.</em></small>            
+
 
                         <form>
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="Name">Name</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Your name">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Email address</label>
                                         <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1">Password</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                                     </div>
                                 </div>
                             </div>
@@ -610,6 +678,10 @@
 
                             <button type="submit" class="btn tf-btn btn-default">Submit</button>
                         </form>
+
+
+
+
 
                     </div>
                 </div>
@@ -721,11 +793,8 @@
             function clcik_me(elem) {
 
                 var id = $(elem).attr("id");
-
                 var the_id = $('#' + id + '').text();
                 var title = $('#' + id + '').text();
-
-
 //                alert(id);
                 //  alert(title);
 
@@ -821,8 +890,6 @@
                                     + '</li>';
                             $("#basher_blog_content").append(blog_content);
                         });
-
-
                     },
                     error: function (xhr) {
                     }
@@ -835,9 +902,7 @@
 
                 load_data_Blog_title();
                 load_data_Blog_title_first_data();
-            });
-
-        </script>
+            });</script>
 
 
         <div id="tf-blog">
